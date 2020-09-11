@@ -36,7 +36,7 @@ router.delete("/:id", async (req,res,next) => {
     try{
         const { id } = req.params
         await Ventures.remove(id)
-        res.status(204).end()
+        res.status(200).json({ message:"Venture deleted successfully."})
     }catch(err){
         next(err)
     }

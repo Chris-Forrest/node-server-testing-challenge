@@ -27,9 +27,15 @@ describe("ventureBros intergration tests", () => {
         expect(res.body.name).toBe("Hank Venture")
     })
     it("POST /ventureBros", async () => {
-        const res = await await supertest(server).post("/ventureBros").send({ name: "Jonas Venture Jr"})
+        const res = await supertest(server).post("/ventureBros").send({ name: "Jonas Venture Jr"})
         expect(res.statusCode).toBe(201)
         expect(res.type).toBe("application/json")
         expect(res.body.name).toBe("Jonas Venture Jr")
+    })
+    it("DELETE /ventureBros/:id", async () => {
+        const res = await supertest(server).delete("/ventureBros/16")
+        expect(res.statusCode).toBe(200)
+        expect(res.body.message).toBe("Venture deleted successfully.")
+       //console.log(res.body.message)
     })
 })
