@@ -1,11 +1,15 @@
 const express = require("express");
+const castrouter = require("./cast/cast-router");
 
 const server = express()
 
 server.use(express.json());
 
+server.use("/ventureBros", castrouter)
 server.get("/", (req,res) => {
-    res.json({ message: "Welcome to your API"})
+    res.json({ 
+        message:"Welcome",
+    })
 });
 
 server.use((err,req,res,next) => {

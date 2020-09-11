@@ -5,11 +5,11 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('ventureBros').insert([
-        {name: "Thaddeus Venture"},
-        {name: "Brock Sampson"},
-        {name: "Dean Venture"},
-        {name: "Hank Venture"},
-        {name: "H.E.L.P.eR."}
+        {id:1 ,name: "Thaddeus Venture"},
+        {id:2 ,name: "Brock Sampson"},
+        {id:3 ,name: "Dean Venture"},
+        {id:4 ,name: "Hank Venture"},
+        {id:5 ,name: "H.E.L.P.eR."}
       ]);
     });
 };
