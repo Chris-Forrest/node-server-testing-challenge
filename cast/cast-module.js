@@ -5,7 +5,7 @@ function find(){
 };
 
 function findById(id){
-    return db("ventrureBros").where({ id }).first()
+    return db("ventureBros").where({ id }).first()
 };
 
 async function create(data){

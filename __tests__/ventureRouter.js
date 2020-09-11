@@ -18,5 +18,12 @@ describe("ventureBros intergration tests", () => {
         expect(res.statusCode).toBe(200)
         expect(res.type).toBe("application/json")
         expect(res.body.length).toBeGreaterThanOrEqual(5)
+        expect(res.body[1].name).toBe("Brock Sampson")
+    })
+    it("GET /ventureBros/:id", async() =>{
+        const res = await supertest(server).get("/ventureBros/4")
+        expect(res.statusCode).toBe(200)
+        expect(res.type).toBe("application/json")
+        expect(res.body.name).toBe("Hank Venture")
     })
 })
