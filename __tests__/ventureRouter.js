@@ -26,4 +26,10 @@ describe("ventureBros intergration tests", () => {
         expect(res.type).toBe("application/json")
         expect(res.body.name).toBe("Hank Venture")
     })
+    it("POST /ventureBros", async () => {
+        const res = await await supertest(server).post("/ventureBros").send({ name: "Jonas Venture Jr"})
+        expect(res.statusCode).toBe(201)
+        expect(res.type).toBe("application/json")
+        expect(res.body.name).toBe("Jonas Venture Jr")
+    })
 })
